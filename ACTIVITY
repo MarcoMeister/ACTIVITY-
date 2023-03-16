@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Where am I Game</title>
+    <style>
+      body {
+        background-color: purple;
+        font-family: 'Comic Sans MS', cursive;
+      }
+
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .game-title {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 2px 2px #333;
+        margin-bottom: 24px;
+      }
+
+      .game-image {
+        width: 400px;
+        height: 400px;
+        margin-bottom: 24px;
+      }
+
+      #game-button {
+        font-size: 24px;
+        padding: 12px 24px;
+        margin-top: 24px;
+      }
+
+      #game-text {
+        font-size: 28px;
+        margin-top: 24px;
+        color: white;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-title">INFLUX ACTIVITY</div>
+      <img src="madame.jpg" alt="Where am I?" class="game-image">
+      <button id="game-button">WHERE AM I?</button>
+      <p id="game-text"></p>
+    </div>
+    <script>
+      const button = document.getElementById("game-button");
+      const text = document.getElementById("game-text");
+      const image = document.querySelector(".game-image");
+
+      let clickCount = 0;
+      button.addEventListener("click", function() {
+        clickCount++;
+        if (clickCount === 1) {
+          text.style.display = "block";
+          text.innerText = "You are in Canada!";
+          setTimeout(function() {
+            text.style.display = "none";
+            image.src = "empire.jpg";
+          }, 2000);
+        } else if (clickCount === 2) {
+          text.style.display = "block";
+          text.innerText = "You are in USA!";
+          setTimeout(function() {
+            text.style.display = "none";
+            image.src = "bigbang.jpg";
+          }, 2000);
+        } else if (clickCount === 3) {
+          text.style.display = "block";
+          text.innerText = "You are in LONDON!";
+          setTimeout(function() {
+            text.style.display = "none";
+            image.src = "ireland.jpg";
+          }, 2000);
+        } else if (clickCount === 4) {
+          text.style.display = "block";
+          text.innerText = "You are in IRELAND!";
+          setTimeout(function() {
+            text.style.display = "none";
+            image.src = "scotland.jpg";
+          }, 2000);
+        } else if (clickCount === 5) {
+          text.style.display = "block";
+          text.innerText = "You are in SCOTLAND!";
+          setTimeout(function() {
+            text.style.display = "none";
+            image.src = "southafrica.jpg";
+          }, 2000);
+        } else if (clickCount === 6) {
+          text.style.display = "block";
+          text.innerText = "You are in SOUTH AFRICA!";
+        }
+      });
+    </script>
+  </body>
+</html>
